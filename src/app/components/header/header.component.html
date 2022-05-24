@@ -1,0 +1,102 @@
+<header id="back">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="assets/imagenes/APLogo-20-20.png" alt="logo" width="80">
+          <strong>#yo programo</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#sobreMi"> Sobre mí </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#educacion"> Educación </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#habilidades"> Habilidades </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#proyectos"> Proyectos </a>
+            </li>
+          </ul>
+          <a class="navbar-brand contacto" href="https://wa.me/543885089552?text=¡Hola,%20me%20interesa%20tu%20trabajo!"
+            target="_blank">
+            <img src="assets/imagenes/5296520_bubble_chat_mobile_whatsapp_whatsapp logo_icon.png" alt="whatsapp"
+              width="20">
+          </a>
+          <a class="navbar-brand contacto" href="https://instagram.com/cris_angel_g/" target="_blank">
+            <img src="assets/imagenes/2609558_instagram_social media_social_icon.png" alt="instagram" width="20">
+          </a>
+          <a class="navbar-brand contacto"
+            href="mailto:cris.life121@gmail.com?subject=¡Hola,%20me%20interesa%20tu%20trabajo!" target="_blank">
+            <img src="assets/imagenes/132837_gmail_icon.png" alt="gmail" width="24">
+          </a>
+          <!-- Button trigger modal -->
+  
+          <button type="button" class="btnmod" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <a>
+              <img class="user" src="assets/imagenes/person-circle.svg" alt="user" width="30">
+            </a>
+          </button>
+          <!-- Modal -->
+  
+          <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog tamaño">
+              <div class="modal-content formback">
+                <!--fin modal-->
+                <form>
+                  <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label"> Correo electrónico </label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <div id="emailHelp" class="form-text"> Nunca compartiremos su correo electrónico con nadie más.
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label"> Contraseña </label>
+                    <input type="password" class="form-control" id="exampleInputPassword1">
+                  </div>
+                  <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1"> Check me out </label>
+                  </div>
+                  <button type="submit" class="btn btn-primary send"> Iniciar sesión </button>
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> Cancelar </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div>
+      <button class="btn-edit editBaner">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" class="bi bi-pencil"
+          viewBox="0 0 16 16">
+          <path
+            d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
+        </svg>
+      </button>
+    </div>
+    <div id="carouselExampleSlidesOnly" class="carousel slide container-fluid" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active velocidad" data-bs-interval="5000">
+          <img [src]="miPortfolio.carousel.img1" class="d-block w-80 banner"
+            alt="escritorio computadora">
+        </div>
+        <div class="carousel-item velocidad" data-bs-interval="5000">
+          <img [src]="miPortfolio.carousel.img2" class="d-block w-80 banner"
+            alt="escritorio computadora">
+        </div>
+        <div class="carousel-item velocidad" data-bs-interval="5000">
+          <img [src]="miPortfolio.carousel.img3" class="d-block w-80 banner"
+            alt="escritorio computadora">
+        </div>
+      </div>
+    </div>
+  </header>
