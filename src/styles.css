@@ -205,17 +205,20 @@ form {
 
 /*modificaciones en "habilidades"*/
 .habilidades {
-    margin: 100px 0;
+    margin: 100px 0px;
 }
-
-.tecnologias {
-    margin-top: 50px;
+.skill {
+    display: inline-block;
+    margin: 0px 25px;
     line-height: 7;
     text-align: center;
 }
-
-.tecnologias svg {
-    margin: 0 20px;
+.margen {
+    margin-top: 100px;
+}
+.skill img {
+    width: 60px;
+    height: 65px;
 }
 
 /*modificaciones en "proyectos"*/

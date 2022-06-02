@@ -1,4 +1,8 @@
 {
+    "Usuario": {
+        "correo": "",
+        "clave": ""
+    },
     "carousel": {
         "img1": "assets/imagenes/small/mohammadreza-alidoost-ZuL4pOiwlWg-unsplash.jpg",
         "img2": "assets/imagenes/small/robert-torres-JWhDdWUYif0-unsplash.jpg",
@@ -29,9 +33,72 @@
             "descripcion4": "La segunda etapa tiene además la certificación del Instituto Nacional de Tecnología Industrial (INTI)."
         }
     ],
-    "habilidades": {
-        "img": ""
-    },
+    "habilidades": [
+        {
+            "img": "assets/imagenes/tecnologias/Html5.png",
+            "nombre": "Html5"
+        },
+        {
+            "img": "assets/imagenes/tecnologias/Css3.png",
+            "nombre": "Css3"
+        },
+        {
+            "img": "assets/imagenes/tecnologias/JavaScript.png",
+            "nombre": "JavaScript"
+        },
+        {
+            "img": "assets/imagenes/tecnologias/TypeScript.png",
+            "nombre": "TypeScript"
+        },
+        {
+            "img": "assets/imagenes/tecnologias/Bootstrap.png",
+            "nombre": "Bootstrap"
+        },
+        {
+            "img": "assets/imagenes/tecnologias/Nodejs.png",
+            "nombre": "Nodejs"
+        },
+        {
+            "img": "assets/imagenes/tecnologias/Figma.png",
+            "nombre": "Figma"
+        },
+        {
+            "img": "assets/imagenes/tecnologias/Angular.png",
+            "nombre": "Angular"
+        },
+        {
+            "img": "assets/imagenes/tecnologias/Java.png",
+            "nombre": "Java"
+        },
+        {
+            "img": "assets/imagenes/tecnologias/Git.png",
+            "nombre": "Git"
+        },
+        {
+            "img": "assets/imagenes/tecnologias/GitHub.png",
+            "nombre": "GitHub"
+        },
+        {
+            "img": "assets/imagenes/tecnologias/MySQL.png",
+            "nombre": "MySQL"
+        },
+        {
+            "img": "assets/imagenes/tecnologias/Spring.png",
+            "nombre": "Spring"
+        },
+        {
+            "img": "assets/imagenes/tecnologias/GitHub.png",
+            "nombre": "GitHub"
+        },
+        {
+            "img": "assets/imagenes/tecnologias/MySQL.png",
+            "nombre": "MySQL"
+        },
+        {
+            "img": "assets/imagenes/tecnologias/Spring.png",
+            "nombre": "Spring"
+        }
+    ],
     "proyectos": [
         {
             "img": "assets/imagenes/trabajo-en-proceso1.jpg",
