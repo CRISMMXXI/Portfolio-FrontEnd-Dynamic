@@ -27,10 +27,7 @@
             "img": "assets/imagenes/APLogo-20-20.png",
             "title": "Desarrollador Full Stack Junior.",
             "school": "Argentina Programa",
-            "descripcion": "¿Qué es Argentina Programa? Una capacitación en programación gratuita y virtual organizada en dos etapas:",
-            "descripcion2": "#SéProgramar, en donde vas a aprender los fundamentos básicos para aprender a programar #YoProgramo, en la que vas a profundizar tus conocimientos y capacitarte para convertirte en un",
-            "descripcion3": "programador web full stack junior. Las dos etapas cuentan con una certificación conjunta del Ministerio de Desarrollo Productivo y la Cámara Argentina de la Industria de Software (CESSI).",
-            "descripcion4": "La segunda etapa tiene además la certificación del Instituto Nacional de Tecnología Industrial (INTI)."
+            "descripcion": "¿Qué es Argentina Programa? Una capacitación en programación gratuita y virtual organizada en dos etapas:   #SéProgramar, en donde vas a aprender los fundamentos básicos para aprender a programar.   #YoProgramo, en la que vas a profundizar tus conocimientos y capacitarte para convertirte en un programador web full stack junior.   Las dos etapas cuentan con una certificación conjunta del Ministerio de Desarrollo Productivo y la Cámara Argentina de la Industria de Software (CESSI). La segunda etapa tiene además la certificación del Instituto Nacional de Tecnología Industrial (INTI)."
         }
     ],
     "habilidades": [
