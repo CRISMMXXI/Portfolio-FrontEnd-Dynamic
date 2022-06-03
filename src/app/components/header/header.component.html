@@ -10,6 +10,8 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <!-- menu de navegacion -->
+
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="#sobreMi"> Sobre mí </a>
@@ -24,6 +26,8 @@
               <a class="nav-link" href="#proyectos"> Proyectos </a>
             </li>
           </ul>
+          <!-- opciones para contactarme -->
+
           <a class="navbar-brand contacto" href="https://wa.me/543885089552?text=¡Hola,%20me%20interesa%20tu%20trabajo!"
             target="_blank">
             <img src="assets/imagenes/5296520_bubble_chat_mobile_whatsapp_whatsapp logo_icon.png" alt="whatsapp"
@@ -38,7 +42,7 @@
           </a>
           <!-- Button trigger modal -->
   
-          <button type="button" class="btnmod" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+          <button type="button" class="btnRegistro" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
             <a>
               <img class="user" src="assets/imagenes/person-circle.svg" alt="user" width="30">
             </a>
@@ -49,7 +53,8 @@
             aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog tamaño">
               <div class="modal-content formback">
-                <!--fin modal-->
+
+                <!-- formulario de login -->
                 <form>
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label"> Correo electrónico </label>
@@ -74,15 +79,13 @@
         </div>
       </div>
     </nav>
+    <!-- boton de edicion del banner -->
+    
     <div>
-      <button class="btn-edit editBaner">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="green" class="bi bi-pencil"
-          viewBox="0 0 16 16">
-          <path
-            d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
-        </svg>
-      </button>
+        <fa-icon [icon]=" faPen " class="editBaner"></fa-icon>
     </div>
+
+    <!-- empieza el carousel -->
     <div id="carouselExampleSlidesOnly" class="carousel slide container-fluid" data-bs-ride="carousel">
       <div class="carousel-inner">
         <div class="carousel-item active velocidad" data-bs-interval="5000">

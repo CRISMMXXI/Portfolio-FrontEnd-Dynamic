@@ -15,6 +15,7 @@ h2 {
     font-weight: 700;
     text-align: center
 }
+
 p {
     text-indent: 10px;
 }
@@ -63,9 +64,9 @@ nav {
     margin-right: 5px;
 }
 
-.btnmod {
+.btnRegistro {
     margin-left: 40px;
-    background-color: black;
+    background-color: rgb(29, 27, 27);
     width: 33px;
     padding-left: 0px;
     border: none;
@@ -93,7 +94,7 @@ form {
     border-radius: 10px;
 }
 
-/*modificaciones en el carrusel*/
+/*modificaciones en el carousel*/
 .banner {
     padding: 20px;
     height: 500px;
@@ -207,15 +208,18 @@ form {
 .habilidades {
     margin: 100px 0px;
 }
+
 .skill {
     display: inline-block;
     margin: 0px 25px;
     line-height: 7;
     text-align: center;
 }
+
 .margen {
     margin-top: 100px;
 }
+
 .skill img {
     width: 60px;
     height: 65px;
@@ -249,10 +253,12 @@ form {
     border: 1px solid rgb(132, 11, 11);
     font-weight: 700;
 }
+
 .back a {
     text-decoration: none;
     color: white;
 }
+
 .back a:hover {
     color: red;
 }
@@ -261,15 +267,18 @@ h6 {
     text-align: center;
     color: #ffffff8c;
 }
-
-/* boton de edición-caracteristica general*/
-.btn-edit {
-    background-color: black;
-    border-radius: 20px;
+/*estilo a los botones borrar, agregar, eliminar, check y editar*/
+.borrar-check {
+    box-sizing: border-box;
+    align-self: flex-start;
+    padding-left: 100px;
 }
-.btn-edit:hover {
-    border-radius: 50px;
-    box-shadow: 0 3px 10px 3px #1dc90e;
-    transition: .2s;
-    transform: translateY(-5px) scale(1.3);
+fa-icon {
+   color: green;
+   font-size: 20px;
+   margin: 0px 5px;
+}
+fa-icon:hover {
+   color: #1dc90e;
+   cursor: pointer;
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PortfolioService } from 'src/app/services/portfolio.service';
+import { faXmark, faCheck, faPlus, faPen } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-proyectos',
@@ -7,13 +8,17 @@ import { PortfolioService } from 'src/app/services/portfolio.service';
   styleUrls: ['./proyectos.component.css']
 })
 export class ProyectosComponent implements OnInit {
-misProyectos: any;
+  faPen = faPen;
+  faCheck = faCheck;
+  faPlus = faPlus;
+  faXmark = faXmark;
+  misProyectos: any;
 
-  constructor( private datosPortfolio: PortfolioService ) { }
+  constructor(private datosPortfolio: PortfolioService) { }
 
   ngOnInit(): void {
     this.datosPortfolio.obtenerDatos()
-    .subscribe( data => this.misProyectos = data.proyectos );
+      .subscribe(data => this.misProyectos = data.proyectos);
   }
 
 }
