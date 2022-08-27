@@ -1,18 +1,75 @@
 <section>
   <div class="container-fluid perfil">
-    <div class="row justify-content-center">
+    <div *ngIf="administrador" class="row justify-content-center">
       <div class="col-3 tarjeta">
         <div>
-          <fa-icon [icon]="faPen" class="editPerfil"></fa-icon>
+          <!-- Button trigger modal -->
+          <fa-icon [icon]="faPen" (click)="onOpenModal('edit', administrador)" class="editPerfil" type="button" style="font-size: 17px"
+            data-bs-toggle="modal" data-bs-target="#editAdministradorModal" data-original-title="edit">
+          </fa-icon>
+          
+          <!-- Modal -->
+          <div class="modal fade" id="editAdministradorModal" role="dialog" tabindex="-1" aria-labelledby="editAdministradorModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable" role="document">
+              <div class="modal-content">
+                <div class="modal-header" style="background-color:black">
+                  <h5 class="modal-title" style="color:red" id="editAdministradorModalLabel">Editar administrador</h5>
+                </div>
+                <div class="modal-body">
+
+                  <!--Formulario-->
+                  <form #editForm="ngForm" style="border:none">
+                    <div class="mb-3">
+                      <label for="nombre" class="form-label">Nombre</label>
+                      <input type="text" ngModel="{{editAdministrador?.nombre}}" name="nombre" class="form-control" id="nombre">
+                    </div>
+                    <input type="hidden" ngModel="{{editAdministrador?.id}}" name="id" class="form-control" id="id">
+                    <div class="mb-3">
+                      <label for="apellido" class="form-label">Apellido</label>
+                      <input type="text" ngModel="{{editAdministrador?.apellido}}" name="apellido" class="form-control" id="apellido">
+                    </div>
+                    <div class="mb-3">
+                      <label for="certificado" class="form-label">Certificado</label>
+                      <input type="text" ngModel="{{editAdministrador?.certificado}}" name="certificado" class="form-control" id="certificado">
+                    </div>
+                    <div class="mb-3">
+                      <label for="descripcion" class="form-label">Descripcion</label>
+                      <input type="text" ngModel="{{editAdministrador?.descripcion}}" name="descripcion" class="form-control" id="descripcion">
+                    </div>
+                    <div class="mb-3">
+                      <label for="foto" class="form-label">Foto</label>
+                      <input type="text" ngModel="{{editAdministrador?.foto}}" name="foto" class="form-control" id="foto">
+                    </div>
+                    <div class="mb-3">
+                      <label for="fotoBannerA" class="form-label">Foto Banner 1</label>
+                      <input type="text" ngModel="{{editAdministrador?.fotoBannerA}}" name="fotoBannerA" class="form-control" id="fotoBannerA">
+                    </div>
+                    <div class="mb-3">
+                      <label for="fotoBannerB" class="form-label">Foto Banner 2</label>
+                      <input type="text" ngModel="{{editAdministrador?.fotoBannerB}}" name="fotoBannerB" class="form-control" id="fotoBannerB">
+                    </div>
+                    <div class="mb-3">
+                      <label for="fotoBannerC" class="form-label">Foto Banner 3</label>
+                      <input type="text" ngModel="{{editAdministrador?.fotoBannerC}}" name="fotoBannerC" class="form-control" id="fotoBannerC">
+                    </div>
+                    <div class="modal-footer">
+                      <button (click)="onUpdateAdministrador(editForm.value)" type="submit" class="btn btn-primary">Guardar</button>
+                      <button type="button" id="edit-administrador-form" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <img [src]="miPortfolio.tarjeta.img" alt="perfil"> <br>
-        <p> {{miPortfolio.tarjeta.name}} <br> <strong> {{miPortfolio.tarjeta.role}} </strong> </p>
+        <!--foto de perfil-->
+        <img [src]="administrador.foto" alt="perfil"> <br>
+        <p> {{administrador.nombre}} {{administrador.apellido}}<br> 
+          <strong> {{administrador.certificado}} </strong> </p>
       </div>
       <div class="col-11">
-        <h1 id="sobreMi"> Sobre mí
-          <fa-icon [icon]="faPen"></fa-icon>
-        </h1>
-        <p> {{miPortfolio.sobreMi.descripcion}} </p>
+        <h1 id="sobreMi"> Sobre mí </h1>
+        <p> {{administrador.descripcion}} </p>
       </div>
     </div>
   </div>

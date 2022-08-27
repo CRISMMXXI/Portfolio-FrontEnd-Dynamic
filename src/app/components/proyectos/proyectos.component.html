@@ -3,26 +3,137 @@
     <div class="row justify-content-center align-items-center">
       <div class="col-11">
         <h2 id="proyectos"> Proyectos
-          <fa-icon [icon]=" faPen "></fa-icon>
-          <fa-icon [icon]="faPlus"></fa-icon>
+          <div style="display:inline-block; font-size: 16px;">
+            <!-- Button trigger modal Add-->
+            <fa-icon [icon]="faPlus" (click)="onOpenModal('add')" type="button" 
+            data-bs-toggle="modal" data-bs-target="#addProyectoModal" data-original-title="add">
+            </fa-icon>
+            
+            <!-- Modal Add-->
+            <div class="modal fade" id="addProyectoModal" role="dialog" tabindex="-1" aria-labelledby="addProyectoModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-dialog-scrollable" role="document">
+                <div class="modal-content">
+                  <div class="modal-header" style="background-color:black">
+                    <h5 class="modal-title" style="color:red" id="addProyectoModalLabel" >Agregar Proyecto</h5>
+                  </div>
+                  <div class="modal-body">
+
+                    <!--Formulario Add-->
+                    <form #addForm="ngForm" (ngSubmit)="onAddProyecto(addForm)" style="border:none">
+                      <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre</label>
+                        <input type="text" ngModel name="nombre" class="form-control" id="nombre" placeholder="Nombre" required>
+                      </div>
+                      <div class="mb-3">
+                        <label for="descripcion" class="form-label">Descripción</label>
+                        <input type="text" ngModel name="descripcion" class="form-control" id="descripcion" placeholder="descripcion" required>
+                      </div>
+                      <div class="mb-3">
+                        <label for="fechaTermino" class="form-label">Fecha de finalización</label>
+                        <input type="date" ngModel name="fechaTermino" class="form-control" id="fechaTermino" placeholder="aaaa/mm/dd" required>
+                      </div>
+                      <div class="mb-3">
+                        <label for="foto" class="form-label">Foto</label>
+                        <input type="text" ngModel name="foto" class="form-control" id="foto" placeholder="Url de la imagen" required>
+                      </div>
+                      <div class="modal-footer">
+                        <button [disabled]="addForm.invalid" type="submit" class="btn btn-primary">Guardar</button>
+                        <button type="button" id="add-proyecto-form" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div> 
         </h2>
       </div>
       <ul>
-        <li *ngFor=" let proyecto of misProyectos ">
+        <li *ngFor=" let proyecto of proyectoList ">
           <div class="container-fluid">
             <div class="row justify-content-center align-items-center">
               <div class="col-11" style="padding-left: 80%">
-                <fa-icon [icon]="faXmark"></fa-icon>
-                <fa-icon [icon]="faCheck"></fa-icon>
+                <div style="display:inline-block" id="main-container">
+                  <!-- Button trigger modal Edit-->
+                  <fa-icon [icon]="faPen" (click)="onOpenModal('edit', proyecto)" 
+                  style="font-size: 17px" type="button" data-bs-toggle="modal" data-bs-target="#editProyectoModal" data-original-title="edit">
+                  </fa-icon>
+                  
+                  <!-- Modal Edit-->
+                  <div class="modal fade" id="editProyectoModal" tabindex="-1" role="dialog" aria-labelledby="editProyectoModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-scrollable" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header" style="background-color:black">
+                          <h5 clase="modal-title" id="editProyectoModalLabel" style="color:red" >
+                            Editar Proyecto "{{editProyecto?.nombre}}"
+                          </h5>
+                        </div>
+                        <div class="modal-body">
+        
+                          <!--Formulario Edit-->
+                          <form #editForm="ngForm" style="border:none">
+                            <div class="mb-3">
+                              <label for="nombre" class="form-label">Nombre</label>
+                              <input type="text" ngModel="{{editProyecto?.nombre}}" name="nombre" class="form-control" id="nombre">
+                            </div>
+                            <input type="hidden" ngModel="{{editProyecto?.idPro}}" name="idPro" class="form-control" id="idPro">
+                            <div class="mb-3">
+                              <label for="descripcion" class="form-label">Descripción</label>
+                              <input type="text" ngModel="{{editProyecto?.descripcion}}" name="descripcion" class="form-control" id="descripcion">
+                            </div>
+                            <div class="mb-3">
+                              <label for="fechaTermino" class="form-label">Fecha de finalización</label>
+                              <input type="date" ngModel="{{editProyecto?.fechaTermino}}" name="fechaTermino" class="form-control" id="fechaTermino">
+                            </div>
+                            <div class="mb-3">
+                              <label for="foto" class="form-label">Foto</label>
+                              <input type="text" ngModel="{{editProyecto?.foto}}" name="foto" class="form-control" id="foto">
+                            </div>
+                            <div class="modal-footer">
+                              <button (click)="onUpdateProyecto(editForm.value)" type="submit" class="btn btn-primary">Guardar</button>
+                              <button type="button" id="edit-proyecto-form" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Button trigger modal Delete-->
+                <fa-icon [icon]="faXmark" type="button" data-bs-toggle="modal" data-bs-target="#deleteModalProyecto" (click)="onOpenModal('delete', proyecto)" data-original-title="delete">  
+                </fa-icon>
+                <!--Delete modal-->
+                <div style="font-size: 16px; font-weight: 700" class="modal fade" id="deleteModalProyecto" tabindex="-1" role="dialog" aria-labelledby="deleteModalProyectoLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header" style="background-color: black">
+                        <h5 class="modal-title" id="deleteModalProyectoLabel" style="font-weight:700; color: red">Borrar Proyecto</h5>
+                      </div>
+                      <div class="modal-body" style="color: rgb(39, 35, 35)">
+                        <p>¿Estás seguro de que quieres borrar el proyecto
+                          "{{deleteProyecto?.nombre}}"?
+                        </p>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                          No
+                        </button>
+                        <button (click)="onDeleteProyecto(deleteProyecto!.idPro)" class="btn btn-danger" data-bs-dismiss="modal">
+                          Si
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="col-5 col-sm-3 col-lg-2">
-                <img [src]="proyecto.img" alt="trabajando" class="img-fluid">
+                <img [src]="proyecto.foto" alt="trabajando" class="img-fluid">
               </div>
               <div class="col-11 col-sm-8">
                 <br>
-                <p> <strong> {{proyecto.title}} </strong> </p>
+                <p> <strong> {{proyecto.nombre}} </strong> </p>
                 <p> {{proyecto.descripcion}} </p>
-                <p> {{proyecto.finalizacion}}</p>
+                <p> fecha de finalización <strong>{{proyecto.fechaTermino}}</strong> </p>
               </div>
             </div>
           </div>

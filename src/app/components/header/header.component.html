@@ -59,16 +59,10 @@
                   <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label"> Correo electrónico </label>
                     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    <div id="emailHelp" class="form-text"> Nunca compartiremos su correo electrónico con nadie más.
-                    </div>
                   </div>
                   <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label"> Contraseña </label>
                     <input type="password" class="form-control" id="exampleInputPassword1">
-                  </div>
-                  <div class="mb-3 form-check">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1"> Check me out </label>
                   </div>
                   <button type="submit" class="btn btn-primary send"> Iniciar sesión </button>
                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> Cancelar </button>
@@ -79,25 +73,21 @@
         </div>
       </div>
     </nav>
-    <!-- boton de edicion del banner -->
-    
-    <div>
-        <fa-icon [icon]=" faPen " class="editBaner"></fa-icon>
-    </div>
+
 
     <!-- empieza el carousel -->
     <div id="carouselExampleSlidesOnly" class="carousel slide container-fluid" data-bs-ride="carousel">
-      <div class="carousel-inner">
+      <div *ngIf="administrador" class="carousel-inner">
         <div class="carousel-item active velocidad" data-bs-interval="5000">
-          <img [src]="miPortfolio.carousel.img1" class="d-block w-80 banner"
+          <img [src]="administrador.fotoBannerA" class="d-block w-80 banner"
             alt="escritorio computadora">
         </div>
         <div class="carousel-item velocidad" data-bs-interval="5000">
-          <img [src]="miPortfolio.carousel.img2" class="d-block w-80 banner"
+          <img [src]="administrador.fotoBannerB" class="d-block w-80 banner"
             alt="escritorio computadora">
         </div>
         <div class="carousel-item velocidad" data-bs-interval="5000">
-          <img [src]="miPortfolio.carousel.img3" class="d-block w-80 banner"
+          <img [src]="administrador.fotoBannerC" class="d-block w-80 banner"
             alt="escritorio computadora">
         </div>
       </div>
