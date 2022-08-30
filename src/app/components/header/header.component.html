@@ -1,7 +1,7 @@
 <header id="back">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="http://localhost:4200/portfolio#">
           <img src="assets/imagenes/APLogo-20-20.png" alt="logo" width="80">
           <strong>#yo programo</strong>
         </a>
@@ -14,16 +14,16 @@
 
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#sobreMi"> Sobre mí </a>
+              <a class="nav-link active" aria-current="page" href="http://localhost:4200/portfolio#sobreMi"> Sobre mí </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#educacion"> Educación </a>
+              <a class="nav-link" href="http://localhost:4200/portfolio#educacion" target="_self"> Educación </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#habilidades"> Habilidades </a>
+              <a class="nav-link" href="http://localhost:4200/portfolio#habilidades"> Habilidades </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#proyectos"> Proyectos </a>
+              <a class="nav-link" href="http://localhost:4200/portfolio#proyectos"> Proyectos </a>
             </li>
           </ul>
           <!-- opciones para contactarme -->
@@ -40,11 +40,11 @@
             href="mailto:cris.life121@gmail.com?subject=¡Hola,%20me%20interesa%20tu%20trabajo!" target="_blank">
             <img src="assets/imagenes/132837_gmail_icon.png" alt="gmail" width="24">
           </a>
-          <!-- Button trigger modal -->
+          <!-- Button trigger modal --> <!-- se hace uso del anchor para forzar el cierre de sesion -->
   
-          <button type="button" class="btnRegistro" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            <a>
-              <img class="user" src="assets/imagenes/person-circle.svg" alt="user" width="30">
+          <button type="button" class="btnRegistro" data-bs-toggle="modal" data-bs-target="">
+            <a href="#salir" style="color: white; text-decoration: none;">
+              <img class="user" src="assets/imagenes/person-circle.svg" alt="user" width="30">Salir
             </a>
           </button>
           <!-- Modal -->
@@ -54,18 +54,18 @@
             <div class="modal-dialog tamaño">
               <div class="modal-content formback">
 
-                <!-- formulario de login -->
-                <form>
-                  <div class="mb-3">
-                    <label for="exampleInputEmail1" class="form-label"> Correo electrónico </label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <!-- formulario de login --> <!-- queda pendiente por falta de tiempo -->
+                <form style="text-align: center;">
+                  <div class="mb-5">
+                    <h3 style="color: white;">Cerrar Sesión</h3>
+                    <p style="margin-top: 30px;">¿Está seguro de que quiere cerrar la Sesión?</p>
                   </div>
-                  <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label"> Contraseña </label>
-                    <input type="password" class="form-control" id="exampleInputPassword1">
+                  <div>
+                    <button type="button" class="btn btn-primary">
+                      <a href="#"></a> Salir
+                    </button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" style="margin-left: 15px;"> Cancelar </button>
                   </div>
-                  <button type="submit" class="btn btn-primary send"> Iniciar sesión </button>
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"> Cancelar </button>
                 </form>
               </div>
             </div>

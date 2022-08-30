@@ -15,19 +15,19 @@ export class HabilidadService {
 
 
   public getHab(): Observable<Habilidad[]> {
-    return this.http.get<Habilidad[]>(`${this.apiServerUrl}/habilidad/ver`);
+    return this.http.get<Habilidad[]>(`${this.apiServerUrl}/api/habilidad/ver`);
   }
 
   public addHab(habilidad: Habilidad): Observable<Habilidad> {
-    return this.http.post<Habilidad>(`${this.apiServerUrl}/habilidad/crear`, habilidad);
+    return this.http.post<Habilidad>(`${this.apiServerUrl}/api/habilidad/crear`, habilidad);
   }
 
   public editHab(habilidad: Habilidad): Observable<Habilidad> {
-    return this.http.put<Habilidad>(`${this.apiServerUrl}/habilidad/editar/${habilidad.idHab}`, habilidad);
+    return this.http.put<Habilidad>(`${this.apiServerUrl}/api/habilidad/editar/${habilidad.idHab}`, habilidad);
   }
 
   public deleteHab(idHab: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiServerUrl}/habilidad/eliminar/${idHab}`);
+    return this.http.delete<void>(`${this.apiServerUrl}/api/habilidad/eliminar/${idHab}`);
   }
 
 }

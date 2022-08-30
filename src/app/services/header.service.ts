@@ -17,7 +17,7 @@ export class HeaderService {
  
 
   public getAdmin(): Observable<Administrador> {
-    return this.http.get<Administrador>(`${this.apiServerUrl}/administrador/id/1`);
+    return this.http.get<Administrador>(`${this.apiServerUrl}/api/administrador/id/1`);
   }
 
 

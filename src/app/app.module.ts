@@ -8,10 +8,18 @@ import { EducacionComponent } from './components/educacion/educacion.component';
 import { HabilidadesComponent } from './components/habilidades/habilidades.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { IniciarSesionComponent } from './components/iniciar-sesion/iniciar-sesion.component';
+import { PortfolioComponent } from './components/portfolio/portfolio.component';
+import { EducacionService } from './services/educacion.service';
+import { HabilidadService } from './services/habilidad.service';
+import { HeaderService } from './services/header.service';
+import { ProyectoService } from './services/proyecto.service';
+import { SobreMiService } from './services/sobreMi.service';
+import { InterceptorService } from './services/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -21,16 +29,20 @@ import { FormsModule } from '@angular/forms';
     EducacionComponent,
     HabilidadesComponent,
     ProyectosComponent,
-    FooterComponent
+    FooterComponent,
+    IniciarSesionComponent,
+    PortfolioComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FontAwesomeModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: [EducacionService, HabilidadService, HeaderService, ProyectoService, SobreMiService,
+  {provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

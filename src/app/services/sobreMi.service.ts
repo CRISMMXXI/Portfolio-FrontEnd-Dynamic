@@ -18,11 +18,11 @@ export class SobreMiService {
  
 
   public getAdmin(): Observable<Administrador> {
-    return this.http.get<Administrador>(`${this.apiServerUrl}/administrador/id/1`);
+    return this.http.get<Administrador>(`${this.apiServerUrl}/api/administrador/id/1`);
   }
 
   public editAdmin(administrador: Administrador): Observable<Administrador> {
-    return this.http.put<Administrador>(`${this.apiServerUrl}/administrador/editar/${administrador.id}`, administrador);
+    return this.http.put<Administrador>(`${this.apiServerUrl}/api/administrador/editar/${administrador.id}`, administrador);
   }
  
 
